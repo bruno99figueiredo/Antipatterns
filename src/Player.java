@@ -4,16 +4,16 @@ public class Player extends Person{
     private String name_player;
     private String position;
     private Integer age;
-    private String nr_phone;
+    private Integer nr_phone;
     private String email;
 
-    public Player(String name, String name_player, String position, Integer age, String nr_phone, String email) {
+    public Player(String name, String name_player, String position, Integer age, Integer nr_phone, String email) {
         this.name = name;
         this.name_player = name_player;
         this.position = position;
         this.age = age;
-        this.nr_phone = "+351"+nr_phone;
-        this.email = email.split("@")[0].concat("@gmail.com");
+        this.nr_phone = nr_phone;
+        this.email = email;
     }
 
 
@@ -53,11 +53,11 @@ public class Player extends Person{
     }
 
 
-    public String getNr_phone() {
+    public Integer getNr_phone() {
         return nr_phone;
     }
 
-    public void setNr_phone(String nr_phone) {
+    public void setNr_phone(Integer nr_phone) {
         this.nr_phone = nr_phone;
     }
 
@@ -69,6 +69,7 @@ public class Player extends Person{
     public void setEmail(String email) {
         this.email = email;
     }
+
 
     public String getNamePlayer_Name_Age(){
         return (this.name_player+"->"+this.name+"->").concat(Integer.toString(this.age));

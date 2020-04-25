@@ -9,12 +9,12 @@ public class Club extends SAD_Club{
     private String Adept;
     private String President;
     private String Tecnic;
-    private ArrayList<Player> players = new ArrayList<Player>();
+    public ArrayList<Player> players = new ArrayList<Player>();
 
     public Club(String name, Integer year_foundation, String email, String stadium, String adept, String president, String tecnic) {
         this.name = name;
         this.year_foundation = year_foundation;
-        this.email = email.split("@")[0].concat("@"+this.name+".com");
+        this.email = email;
         Stadium = stadium;
         Adept = adept;
         President = president;
