@@ -15,7 +15,7 @@ public class ClubTests {
         assertEquals("Avançado", player.getPosition());
     }
 
-
+//SO PARA TESTAR O COMMIT
     @Test
     public void getName_Player_String(){
         Player player= new Player("Cristiano", "Ronaldo", "Avançado",
