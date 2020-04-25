@@ -12,7 +12,9 @@ public class ClubTests {
                 35, 966545787,"ronaldo@hotmail.com");
 
         assertEquals("Cristiano", player.getName());
-        assertEquals("Avançado", player.getPosition());
+
+
+        //Free ride Anti Pattern
     }
 
 
@@ -26,12 +28,13 @@ public class ClubTests {
 
 
     @Test
-    public void getNamePlayer_Name_Age_Is2String_And_Integer(){
+    public void getAge_Integer(){
         Player player= new Player("Cristiano", "Ronaldo", "Avançado",
                 35, 966545787,"ronaldo@hotmail.com");
 
-        assertEquals("Ronaldo->Cristiano->35", player.getName_player()+"->"+player.getName()+"->"+player.getAge());
+        assertEquals((Integer)35, player.getAge());
 
+        //Second class citizen Anti Pattern
     }
 
 
@@ -50,7 +53,9 @@ public class ClubTests {
                 35, 966545787, "ronaldo@hotmail.com");
 
         assertEquals("Avançado", player.getPosition());
-        assertEquals((Integer)35, player.getAge());
+
+
+        //Free ride Anti Pattern - CHECK
     }
 
 
@@ -59,10 +64,11 @@ public class ClubTests {
         Player player = new Player("Cristiano", "Ronaldo", "Avançado",
                 35, 966545787, "ronaldo@hotmail.com");
 
-        Field field = player.getClass().getDeclaredField("email");
-        field.setAccessible(true);
 
-        assertEquals("ronaldo@hotmail.com", field.get(player));
+
+        assertEquals("ronaldo@hotmail.com", player.getEmail());
+
+        //Anal probe Anti Pattern - CHECK
     }
 
 
@@ -92,12 +98,13 @@ public class ClubTests {
         Club club = new Club("SL Benfica", 1904, "benfica@benfica.com",
                 "Estádio da Luz", "benfiquista", "Luis Felipe Vieira","Bruno Lage");
 
-        String name= club.getName();
+
         Integer year= club.getYear_foundation();
-        String email= club.getEmail();
-        String adept = club.getAdept();
+
 
         assertEquals((Integer)1904, year);
+
+        //Nitpicker Anti Pattern - CHECK
     }
 
 
@@ -107,8 +114,9 @@ public class ClubTests {
                 "Estádio da Luz", "benfiquista", "Luis Felipe Vieira","Bruno Lage");
 
         assertEquals("SL Benfica", club.getName());
-        assertEquals("Luis Felipe Vieira", club.getPresident());
-    }
 
+
+        //Second class citizen Anti Pattern - CHECK
+    }
 
 }
